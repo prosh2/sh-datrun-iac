@@ -6,6 +6,15 @@ terraform {
     }
   }
 
+  backend "remote" {
+    hostname     = "roronoa.scalr.io"
+    organization = "env-v0od6uicoc86gsnsf"
+
+    workspaces {
+      name = "sh-datrun-iac-aws"
+    }
+  }
+
   required_version = ">= 1.2.0"
 }
 
