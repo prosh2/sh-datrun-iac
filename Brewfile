@@ -1,6 +1,5 @@
 # Brewfile
 
-brew "poetry"
 brew "pre-commit"
 
 # Install Homebrew taps
