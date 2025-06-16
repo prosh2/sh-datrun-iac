@@ -42,7 +42,7 @@ resource "aws_iam_role" "sh_datrun_dp_gha" {
 }
 
 resource "aws_iam_policy" "sh_datrun_dp_gha_policy" {
-  name   = "github-actions"
+  name   = "sh-datrun-dp-gha-policy"
   policy = data.aws_iam_policy_document.github_actions.json
 }
 
