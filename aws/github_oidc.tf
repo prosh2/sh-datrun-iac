@@ -17,7 +17,7 @@ data "aws_iam_policy_document" "github_actions_assume_role" {
       values = [
         "repo:prosh2/sh-datrun-dp:*",
         # data-robot
-        "repo:haojunsng/data-robot:*"
+        "repo:haojunsng/data_robot:*"
       ]
     }
   }
