@@ -14,7 +14,11 @@ data "aws_iam_policy_document" "github_actions_assume_role" {
     condition {
       test     = "StringLike"
       variable = "token.actions.githubusercontent.com:sub"
-      values   = ["repo:prosh2/sh-datrun-dp:*"]
+      values = [
+        "repo:prosh2/sh-datrun-dp:*",
+        # data-robot
+        "repo:haojunsng/data-robot:*"
+      ]
     }
   }
 }
@@ -31,7 +35,10 @@ data "aws_iam_policy_document" "github_actions" {
     ]
     resources = [
       aws_s3_bucket.sh_datrun_lambda_bucket.arn,
-      "${aws_s3_bucket.sh_datrun_lambda_bucket.arn}/*"
+      "${aws_s3_bucket.sh_datrun_lambda_bucket.arn}/*",
+      # data-robot
+      "arn:aws:s3:::data-robot-franky",
+      "arn:aws:s3:::data-robot-franky/*"
     ]
   }
 }
